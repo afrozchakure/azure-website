@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <script>
+      //function that display value
+      function dis(val) {
+        document.getElementById("result").value += val;
+      }
+
+      //function that evaluates the digit and return result
+      function solve() {
+        let x = document.getElementById("result").value;
+        let y = eval(x);
+        document.getElementById("result").value = y;
+      }
+
+      //function that clear the display
+      function clr() {
+        document.getElementById("result").value = "";
+      }
+    </script>
+    <!-- for styling -->
+    <style>
+      .title {
+        margin-bottom: 10px;
+        text-align: center;
+        width: 600px;
+        height: 50px;
+        font-size: xx-large;
+        color: rgb(21, 214, 240);
+        border: solid black 2px;
+      }
+
+      input[type="button"] {
+        background-color: rgb(21, 214, 240);
+        color: rgb(255, 253, 253);
+        border: solid black 2px;
+        width: 150px;
+        height: 50px;
+      }
+
+      input[type="text"] {
+        background-color: white;
+        border: solid black 2px;
+        width: 100%;
+        height: 50px;
+        text-align: right;
+        font-size: xx-large;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+  </head>
+  <!-- create table -->
+  <body>
+    <!-- NavBar -->
+    <nav
+      class="navbar navbar-expand-sm navbar-light"
+      style="background-color: rgb(58, 218, 240)"
+    >
+      <a class="navbar-brand" href="#">Calculator App</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+      </div>
+    </nav>
+    <br />
+    <br />
+
+    <div align="center">
+      <div class="title">Online Calculator Application</div>
+      <table border="1">
+        <tr text-align="center">
+          <td colspan="3"><input type="text" id="result" float="right" /></td>
+          <!-- clr() function will call clr to clear all value -->
+          <td><input type="button" value="C" onclick="clr()" /></td>
+        </tr>
+        <tr>
+          <!-- create button and assign value to each button -->
+          <!-- dis("1") will call function dis to display value -->
+          <td><input type="button" value="1" onclick="dis('1')" /></td>
+          <td><input type="button" value="2" onclick="dis('2')" /></td>
+          <td><input type="button" value="3" onclick="dis('3')" /></td>
+          <td><input type="button" value="/" onclick="dis('/')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="4" onclick="dis('4')" /></td>
+          <td><input type="button" value="5" onclick="dis('5')" /></td>
+          <td><input type="button" value="6" onclick="dis('6')" /></td>
+          <td><input type="button" value="-" onclick="dis('-')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="7" onclick="dis('7')" /></td>
+          <td><input type="button" value="8" onclick="dis('8')" /></td>
+          <td><input type="button" value="9" onclick="dis('9')" /></td>
+          <td><input type="button" value="+" onclick="dis('+')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="." onclick="dis('.')" /></td>
+          <td><input type="button" value="0" onclick="dis('0')" /></td>
+          <!-- solve function call function solve to evaluate value -->
+          <td><input type="button" value="=" onclick="solve()" /></td>
+          <td><input type="button" value="x" onclick="dis('*')" /></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div
+      style="
+        background-color: rgb(58, 218, 240);
+        padding: 15px 0 5px;
+        position: fixed;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        bottom: 0;
+      "
+    >
+      <p class="Copyright">© 2020 Afroz Chakure</p>
+    </div>
+  </body>
+</html>
